@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <section class="container">
+            <h1>Exercício 04</h1>
+            <p>Programa de reajuste de salário de funcionários</p>
+        
+            <form id="form" onsubmit="salarioController.adiciona(event)">  
+                
+                <label>Data</label>
+                <input id="data" type="date" name="data" />
+                
+                <label>Salário do funcionário</label>
+                <input id="salario" type="text" name="salario" />
+
+                <label>Percentual de Aumento</label>
+                <input id="percentual" type="text" name="percentual" />
+
+                <button type="submit">Enviar</button>
+            </form>    
+        </section>
+        <section class="container">
+            <table class="tabela">
+                <thead>
+                    <th>Salário base</th>
+                    <th>Valor do aumento</th>
+                    <th>Data</th>
+                </thead>
+                <tbody class="tbody">
+                   
+                </tbody>
+            </table>
+        </section>
+
+        <script src="js/app/model/Salario.js"></script>
+        <script src="js/app/controller/SalarioController.js"></script>
+
+        <script>
+
+            let salarioController = new SalarioController();
+        </script>
+    </body>
+</html>
