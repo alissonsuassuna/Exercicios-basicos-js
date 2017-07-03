@@ -16,10 +16,10 @@
                 <input id="data" type="date" name="data" />
                 
                 <label>Salário do funcionário</label>
-                <input id="salario" type="text" name="salario" />
+                <input id="salario" type="number" name="salario" />
 
                 <label>Percentual de Aumento</label>
-                <input id="percentual" type="text" name="percentual" />
+                <input id="percentual" type="number" name="percentual" />
 
                 <button type="submit">Enviar</button>
             </form>    
@@ -35,8 +35,11 @@
         <script src="js/app/helpers/DateHelper.js"></script>
 
         <script>
-
             let salarioController = new SalarioController();
+
+            let sal = new Salario();
+
+            console.log(sal);
         </script>
     </body>
 </html>

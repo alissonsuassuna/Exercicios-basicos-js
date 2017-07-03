@@ -28,7 +28,7 @@ class SalarioController{
     }
 
     _criaSalario(){
-        return new Salario(DateHelper.textoParaData(this._inputData.value), this._inputSalario.value, this._inputPercentual.value);
+        return new Salario(DateHelper.textoParaData(this._inputData.value), parseFloat(this._inputSalario.value), parseFloat(this._inputPercentual.value));
 
     }
 
