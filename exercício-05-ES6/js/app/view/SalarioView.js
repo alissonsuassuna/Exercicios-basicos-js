@@ -21,7 +21,7 @@ class SalarioView {
                         <tr>
                             <td>${n.salario}</td>
                             <td>${n.percentual}</td>
-                            <td>${((n.novoSalario + n.salario))}</td>
+                            <td>${n.novoSalario}</td>
                             <td>${DateHelper.dataParaTexto(n.data)}</td>
                         </tr>
 
