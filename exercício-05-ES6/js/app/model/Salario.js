@@ -5,6 +5,7 @@ class Salario {
         this._data = new Date(data.getTime());
         this._salario = salario;
         this._percentual = percentual;
+
         Object.freeze(this);
     }
 
@@ -17,6 +18,11 @@ class Salario {
     }
 
     get percentual(){
-        return this._percentual;
+        return  this._percentual;
+    }
+
+    get novoSalario(){
+
+        return  this._salario * this._percentual / 100;
     }
 }

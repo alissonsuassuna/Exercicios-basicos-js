@@ -8,36 +8,37 @@ class SalarioController{
         this._inputSalario = $('#salario');
         this._inputPercentual = $('#percentual');
 
+        this._listaSalarios = new ListaSalario();
+
+        this._salarioView = new SalarioView($('#salarioView'));
+
+        this._salarioView.uptade(this._listaSalarios);
+
     }
     adiciona(event){
         event.preventDefault();
-     
-        let data = new Date(...this._inputData.value.split('-').map((item, indice) =>  item - indice % 2) );
-        console.log(data);
 
-        let salario = new Salario(data, this._inputSalario.value, this._inputPercentual.value);
+        this._listaSalarios.adiciona(this._criaSalario());
 
-        console.log(salario);
+        this._salarioView.uptade(this._listaSalarios);
+
+        this._limpaFormulario();
+
+        console.log(this._listaSalarios.salarios);
+    }
+
+    _criaSalario(){
+        return new Salario(DateHelper.textoParaData(this._inputData.value), this._inputSalario.value, this._inputPercentual.value);
+
+    }
+
+    _limpaFormulario(){
+
+        this._inputData.value = '';
+        this._inputPercentual.value = 0;
+        this._inputSalario.value = 0
+
+        this._inputData.focus();
+
     }
 }
-
-/**
- *  Arrow Funtion
- * 
- *   let data = new Date(...this._inputData.value.split('-').map((item, indice) => {
-                return item - indice % 2;
-            }));
-
-=============================================================================================================================
-    quando se tem só uma instrução na arrow function podemos nos livra dos colchetes E NÃO PRECISA do return pq ela já faz
-    let data = new Date(...this._inputData.value.split('-').map((item, indice) =>  item - indice % 2)
-    );
-
-    ------------------------
-    Sem arrow function
-
-         let data = new Date(...this._inputData.value.split('-').map(function(item, indice) {
-                return item - indice % 2;
-            }));
- * 
- */
