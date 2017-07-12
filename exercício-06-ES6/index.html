@@ -7,7 +7,7 @@
     </head>
     <body>
         <section class="container">
-            <h1>Exercício 05</h1>
+            <h1>Exercício 06</h1>
             <p>Programa de reajuste de salário de funcionários</p>
         
             <form id="form" onsubmit="salarioController.adiciona(event)">  
@@ -15,31 +15,21 @@
                 <label>Data</label>
                 <input id="data" type="date" name="data" />
                 
-                <label>Salário do funcionário</label>
+                <label>Salário do base do funcionário</label>
                 <input id="salario" type="number" name="salario" />
-
-                <label>Percentual de Aumento</label>
-                <input id="percentual" type="number" name="percentual" />
 
                 <button type="submit">Enviar</button>
             </form>    
         </section>
-        <section class="container">
-            <div id="salarioView"></div>
-        </section>
 
         <script src="js/app/model/Salario.js"></script>
-        <script src="js/app/model/ListaSalario.js"></script>
-        <script src="js/app/view/SalarioView.js"></script>
-        <script src="js/app/controller/SalarioController.js"></script>
-        <script src="js/app/helpers/DateHelper.js"></script>
 
         <script>
-            let salarioController = new SalarioController();
+            
+            let salario = new Salario(1000, new Date('08/09/2015'));
 
-            let sal = new Salario();
-
-            console.log(sal);
+            console.log(salario.data);
         </script>
+     
     </body>
 </html>
